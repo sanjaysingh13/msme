@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Autorickshaw Productions" %>">
+    <meta name="author" content="Manisha">
+
+    <title><%= content_for?(:title) ? yield(:title) : "Autorickshaw Productions" %></title>
+
+    <!-- Bootstrap core CSS -->
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    
+    
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    
+</head>
+
+<body>
+
+
+    <!-- Side Menu -->
+    <a id="menu-toggle" href="#" class="btn btn-primary btn-lg toggle"><i class="fa fa-bars"></i></a>
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <a id="menu-close" href="#" class="btn btn-default btn-lg pull-right toggle"><i class="fa fa-times"></i></a>
+            <li class="sidebar-brand"><a href="#">MSME</a>
+            </li>
+            
+            <li><a href="#">About</a>
+            </li>
+            <li><a href="#">Services</a>
+            </li>
+            </a>
+            </li>
+            <li><a href="#">Contact</a>
+            </li>
+            
+        </ul>
+    </div>
+    <!-- /Side Menu -->
+
+    <!-- Full Page Image Header Area -->
+    
+    <!-- /Call to Action -->
+<%= render 'layouts/messages' %>
+    
+    <%= yield %>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <ul class="list-inline">
+                        <li><a href="mailto:manisharana31@gmail.com?Subject=Autorickshaw%20Productions%20Website"><i class="fa fa-cogs fa-3x"></i></a>
+                    </li>
+                        
+                        <li><a href="#"><i class="fa fa-facebook-square fa-3x"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-twitter-square fa-3x"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-vimeo-square fa-3x"></i></a>
+                        </li>
+                        
+                        
+                    </ul>
+                    
+                    
+                    
+                    <p>&copy; Copyright 2014. All rights reserved.</p></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /Footer -->
+
+    <!-- JavaScript 
+    <script src="js/jquery-1.10.2.js"></script>
+    <script src="js/bootstrap.js"></script>-->
+
+    <!-- Custom JavaScript for the Side Menu and Smooth Scrolling -->
+    <script>
+    $("#menu-close").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    </script>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#sidebar-wrapper").toggleClass("active");
+    });
+    </script>
+    <script>
+    $(function() {
+        $('a[href*=#]:not([href=#])').click(function() {
+            if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') || location.hostname == this.hostname) {
+
+                var target = $(this.hash);
+                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                if (target.length) {
+                    $('html,body').animate({
+                        scrollTop: target.offset().top
+                    }, 1000);
+                    return false;
+                }
+            }
+        });
+    });
+    </script>
+
+</body>
+
+</html>
