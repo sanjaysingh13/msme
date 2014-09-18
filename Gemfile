@@ -41,6 +41,7 @@ gem 'spring',        group: :development
 gem 'simple_form','3.1.0.rc1'
 gem 'bootstrap-sass'
 gem 'high_voltage'
+gem 'rails_12factor'
 group :development do
 gem 'better_errors'
 gem 'binding_of_caller', :platforms=>[:mri_19, :mri_20, :rbx]
